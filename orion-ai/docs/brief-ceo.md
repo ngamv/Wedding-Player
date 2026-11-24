@@ -104,3 +104,41 @@ Les priorités affichées viennent du dernier brief enregistré. Génère un nou
 brief pour les mettre à jour après un changement important. Le bouton **Exporter CSV**
 exporte les indicateurs affichés. Si les comptes Mémoire sont activés, la vue
 consolidée est réservée aux administrateurs.
+
+## Espace Validations
+
+Dans **Validations**, retrouve les brouillons de relance Wedding encore valides
+et les plans d’intervention web à examiner. Les relances dont l’échéance est
+atteinte apparaissent en premier. Le filtre permet de se concentrer sur une
+activité.
+
+**Examiner** ouvre la relance ou l’intervention dans son module. Les décisions
+se prennent dans la fiche, où le contenu complet et les actions sont disponibles.
+Les propositions déjà traitées et les relances devenues obsolètes quittent la
+liste. Avec les comptes activés, cette vue consolidée est réservée aux administrateurs.
+
+Dans le filtre **Étape**, choisis **À suivre après validation** pour retrouver les
+plans web dont le contrôle reste à consigner et les relances Wedding à traiter ou
+à vérifier. Les décisions et résultats restent disponibles dans leurs fiches.
+
+Dans une intervention web au stade **À valider**, **Écarter ce plan** permet de
+consigner un refus avec son motif. Le plan quitte la liste de validation et reste
+consultable dans le journal du site.
+
+Le filtre **Historique** rassemble les décisions et résultats déjà enregistrés,
+y compris pour les dossiers Wedding clôturés. Il affiche la date connue et un
+lien vers la fiche. Les raisons du refus et les détails du résultat restent
+consultables dans la fiche d’origine.
+
+## Recherche transversale
+
+Le lien **Rechercher** dans l’en-tête permet de retrouver les projets, tâches,
+tickets, dossiers Wedding, sites et entrées Mémoire. Saisis un mot-clé ou la
+référence d’un ticket, puis filtre par type si nécessaire. Les accents et la
+casse sont ignorés. Chaque résultat ouvre sa fiche, et une tâche est dépliée
+directement dans son projet.
+
+La recherche peut rapprocher un mot du contenu d’une entrée Mémoire. La liste
+affiche son titre et sa date. Avec les comptes activés, la recherche transversale
+est réservée aux administrateurs. Les membres utilisent leur propre recherche
+dans Mémoire.

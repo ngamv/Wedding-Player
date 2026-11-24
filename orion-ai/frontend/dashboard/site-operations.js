@@ -1,4 +1,4 @@
-async function afficherSites(container, preferred) {
+async function afficherSites(container, preferred, preferredIntervention) {
   const root = document.createElement('div');
   root.className = 'site-operations';
   container.replaceChildren(root);
@@ -32,10 +32,13 @@ async function afficherSites(container, preferred) {
   root.append(status);
   let data;
   try { data = await request(); }
-  catch { status.textContent = 'Le registre des sites nécessite le serveur ORION local.'; return; }
+  catch (error) {
+    status.textContent = error instanceof SyntaxError ? 'Le registre des sites nécessite le serveur ORION local.' : error.message;
+    return;
+  }
 
   const state = {
-    draft:'À valider', approved:'Validée', verified:'Résultat vérifié',
+    draft:'À valider', approved:'Validée', rejected:'Plan écarté', verified:'Résultat vérifié',
     simulation:'Simulation', failed:'Échec du workflow',
   };
   const active = el('select');
@@ -121,7 +124,8 @@ async function afficherSites(container, preferred) {
       stage.append(el('summary', step.agent), el('pre', step.result ?? 'Résultat non conservé.'));
       detail.append(stage);
     }
-    if (intervention.result) detail.append(el('p', intervention.result));
+    if (intervention.result) detail.append(el('p',
+      intervention.state === 'rejected' ? 'Motif · ' + intervention.result : intervention.result));
     async function advance(action, result, control) {
       control.disabled = true;
       try {
@@ -134,7 +138,19 @@ async function afficherSites(container, preferred) {
     }
     if (intervention.state === 'draft') {
       const approve = button('Valider le plan', () => advance('approve', '', approve));
-      detail.append(approve);
+      const decline = el('details');
+      const form = el('form');
+      form.className = 'workflow-form';
+      const reason = el('textarea');
+      Object.assign(reason, {required:true,maxLength:2000});
+      const submit = el('button', 'Enregistrer le refus');
+      form.append(label('Motif du refus', reason), submit);
+      form.onsubmit = event => {
+        event.preventDefault();
+        advance('reject', reason.value, submit);
+      };
+      decline.append(el('summary', 'Écarter ce plan'), form);
+      detail.append(approve, decline);
     }
     if (intervention.state === 'approved') {
       const check = el('form');
@@ -214,4 +230,15 @@ async function afficherSites(container, preferred) {
   options(data.sites.some(site => site.id === preferred) ? preferred : (data.sites[0]?.id ?? ''));
   status.textContent = '';
   await select();
+  if (active.value === preferred && preferredIntervention && /^[a-f0-9]{32}$/.test(preferredIntervention)) {
+    try {
+      const result = await request('/' + preferred + '/interventions/' + preferredIntervention);
+      if (active.value === preferred) {
+        renderIntervention(preferred, result);
+        detail.scrollIntoView({block:'nearest'});
+      }
+    } catch (error) {
+      detail.textContent = error.message;
+    }
+  }
 }

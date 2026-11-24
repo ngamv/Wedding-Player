@@ -15,3 +15,22 @@ py -3.12 scripts\configurer_mcp_ecc.py
 La commande configure les profils dont les prérequis sont présents. La liste complète se trouve dans `config/ecc-mcp.catalogue.json`. Lancez la commande depuis la même session qui démarrera Claude Code si certains profils utilisent des variables d’environnement. Les jetons restent dans l’environnement. Après redémarrage de Claude Code, `/mcp` permet d’autoriser les connexions OAuth et de constater les erreurs éventuelles. Filesystem est limité au dossier `mcp-partage` créé dans ORION.
 
 Un profil déjà déclaré peut encore échouer si son service réclame un compte, un abonnement ou une autorisation OAuth. Le rapport de configuration n’implique pas une connexion réussie.
+
+## Raccorder n8n avec les comptes ORION activés
+
+Ferme le processus n8n local, puis exécute **Activer-ORION.cmd**. Le lanceur
+raccorde les deux requêtes du workflow **Rapport Wedding ORION** à un
+identifiant d’automatisation dédié. ORION conserve son empreinte dans la base
+locale. n8n conserve le secret dans ses identifiants chiffrés. Le secret n’est
+pas ton mot de passe administrateur.
+
+Le lanceur met à jour les deux nœuds HTTP ORION d’un workflow existant et
+conserve les autres nœuds. Il utilise le dossier n8n habituel du lanceur,
+`%LOCALAPPDATA%\ORION-n8n`. Pour une autre installation locale de n8n,
+utilise `py -3.12 -m scripts.orion_n8n --help` et indique son dossier de données,
+le chemin de son programme n8n et, si nécessaire, le port ORION.
+
+Dans n8n, ouvre le workflow après redémarrage et lance **Essai manuel** pour
+vérifier l’accès au rapport et l’écriture du brief. Les tentatives réussies
+apparaissent sous **Backend → Exécutions du brief Wedding**. La tâche Windows
+qui exécute le module Python local du rapport reste indépendante.

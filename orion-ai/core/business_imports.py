@@ -65,6 +65,13 @@ class BusinessImports:
                     day TEXT NOT NULL, status TEXT NOT NULL, cents INTEGER NOT NULL,
                     PRIMARY KEY(kind, id)
                 );
+                CREATE TABLE IF NOT EXISTS local_appointments (
+                    id TEXT PRIMARY KEY, clock TEXT NOT NULL, duration INTEGER NOT NULL,
+                    utc_start TEXT NOT NULL, utc_end TEXT NOT NULL, note TEXT NOT NULL
+                );
+                CREATE TABLE IF NOT EXISTS appointment_links (
+                    appointment_id TEXT PRIMARY KEY, target_kind TEXT NOT NULL, target_id TEXT NOT NULL
+                );
                 CREATE TABLE IF NOT EXISTS business_import_runs (
                     id INTEGER PRIMARY KEY, kind TEXT NOT NULL, state TEXT NOT NULL,
                     count INTEGER NOT NULL, detail TEXT NOT NULL,
@@ -117,6 +124,11 @@ class BusinessImports:
                 """, (kind, fingerprint)).fetchone()
                 if previous:
                     return {**dict(previous), "unchanged": True}
+            if not error and kind == "appointments":
+                local_ids = {row[0] for row in db.execute("SELECT id FROM local_appointments")}
+                if any(row[1] in local_ids for row in rows):
+                    error = "Un identifiant appartient à un rendez-vous saisi dans ORION."
+                    state, rows = "error", ()
             if not error:
                 if kind == "tickets":
                     for _, key, _, _, new_status, _ in rows:
@@ -240,7 +252,10 @@ class BusinessImports:
                 FROM effective_business_items
             """, (day, day, cutoff.isoformat(), day)).fetchone()
             priority = [dict(item) for item in db.execute("""
-                SELECT kind, id, title, day, status FROM effective_business_items
+                SELECT kind, id, title, day, status,
+                    (kind='appointments' AND EXISTS (SELECT 1 FROM local_appointments a
+                                                     WHERE a.id=effective_business_items.id)) AS local_appointment
+                FROM effective_business_items
                 WHERE (kind='prospects' AND status='new' AND day<=?)
                    OR (kind='appointments' AND status='scheduled' AND day BETWEEN ? AND ?)
                    OR (kind='tickets' AND status IN ('open','urgent'))

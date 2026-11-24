@@ -57,7 +57,7 @@ Sur macOS et Linux, utilise `python3` ou le Python de l’environnement virtuel.
 Dès la création du premier administrateur, l’espace Mémoire exige une connexion.
 L’administrateur peut consulter toutes les entrées, y compris les entrées
 antérieures à la création des comptes. Un membre consulte, interroge, modifie,
-télécharge et exporte ses propres entrées. La session du tableau de bord prend fin
-quand tu quittes l’espace Mémoire ou recharges la page. Garde ORION en local :
+télécharge et exporte ses propres entrées. Utilise **Se connecter** dans l’en-tête pour conserver ta session entre les modules.
+Garde ORION en local :
 les autres modules et l’accès au fichier SQLite nécessitent leur propre gestion
 des droits avant une mise en réseau.

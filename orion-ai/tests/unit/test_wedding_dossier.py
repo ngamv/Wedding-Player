@@ -11,8 +11,11 @@ from backend import main
 class WeddingDossierTests(TestCase):
     def test_full_dossier_and_reminder(self):
         with TemporaryDirectory() as directory, patch.dict(
-            "os.environ", {"ORION_WEDDING_DB": str(Path(directory) / "wedding.db")}
+            "os.environ", {"ORION_WEDDING_DB": str(Path(directory) / "wedding.db"),
+                           "ORION_DB": str(Path(directory) / "orion.db")}
         ):
+            self.addCleanup(main.inbox_store.cache_clear)
+            self.addCleanup(main.workflow_memory.cache_clear)
             self.addCleanup(main.wedding_dossier.cache_clear)
             self.addCleanup(main.wedding_store.cache_clear)
             with TestClient(main.app) as api:

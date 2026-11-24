@@ -328,3 +328,20 @@ body[data-page=wedding] .hero-orbit span:first-child::after{background:#ffcaeb;b
 .agenda-day{margin-top:1.2rem}
 .agenda-day h3{border-left:3px solid #197668;padding:.35rem .75rem;background:#edf6f1;font-size:1rem;text-transform:capitalize}
 .agenda-day .item a{flex-shrink:0}
+.agenda-view [data-appointment]{margin:1rem 0;padding:.8rem;border:1px solid var(--line);border-radius:10px}
+.agenda-view [data-appointment] summary{cursor:pointer;font-weight:650}
+.agenda-day .item button{flex-shrink:0}
+.agenda-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:.55rem}
+#api-indicator[data-recovery=true]{color:#774800;background:#fff1d6;border-color:#d9ad5a}
+.approvals-view [hidden]{display:none}
+.approvals-view [role=status]{margin:.45rem 0 .85rem}
+.approvals-view .item a{flex-shrink:0}
+.header-search{color:inherit;font-weight:650}
+.dashboard-search [role=status]{margin:1rem 0}
+.search-result a{flex-shrink:0}
+.search-result strong,.search-result p{overflow-wrap:anywhere}
+#account-control[hidden],#account-dialog form[hidden]{display:none}
+#account-dialog{max-width:min(27rem,calc(100% - 2rem));border:1px solid var(--line);border-radius:14px;padding:1.5rem;color:inherit}
+#account-dialog::backdrop{background:#17243a88}
+#account-dialog h2{margin-top:0}
+#account-dialog [role=status]:not(:empty){margin:.75rem 0}

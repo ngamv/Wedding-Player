@@ -56,6 +56,9 @@ class SiteOperations:
                     result TEXT NOT NULL DEFAULT '', created_at TEXT DEFAULT CURRENT_TIMESTAMP,
                     approved_at TEXT, verified_at TEXT
                 );
+                CREATE TABLE IF NOT EXISTS site_intervention_rejections (
+                    intervention_id TEXT PRIMARY KEY, rejected_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+                );
             """)
 
     def connect(self):
@@ -155,6 +158,11 @@ class SiteOperations:
                     UPDATE site_interventions SET state='approved', approved_at=CURRENT_TIMESTAMP
                     WHERE site_id=? AND id=? AND state='draft'
                 """, (site_id, intervention))
+            elif action == "reject":
+                changed = db.execute("""
+                    UPDATE site_interventions SET state='rejected', result=?
+                    WHERE site_id=? AND id=? AND state='draft'
+                """, (result, site_id, intervention))
             else:
                 changed = db.execute("""
                     UPDATE site_interventions SET state='verified', result=?, verified_at=CURRENT_TIMESTAMP
@@ -162,4 +170,6 @@ class SiteOperations:
                 """, (result, site_id, intervention))
             if not changed.rowcount:
                 raise ValueError("Cette action est incompatible avec l’état de l’intervention.")
+            if action == "reject":
+                db.execute("INSERT INTO site_intervention_rejections(intervention_id) VALUES (?)", (intervention,))
         return self.intervention(site_id, intervention)

@@ -148,7 +148,11 @@ async function afficherInbox(container, preferred, project) {
     for (const key of ['title','kind','content','source','source_date','due_date']) {
       capture.elements[key].value = item[key] ?? '';
     }
-    capture.elements.target.value = item.target_id ? item.target_kind + ':' + item.target_id : '';
+    const target = item.target_id ? item.target_kind + ':' + item.target_id : '';
+    if (target && !Array.from(capture.elements.target.options).some(option => option.value === target)) {
+      capture.elements.target.add(new Option('Dossier associé existant', target));
+    }
+    capture.elements.target.value = target;
     save.textContent = 'Enregistrer la modification';
     reset.hidden = false;
     capture.elements.title.focus();
@@ -272,7 +276,10 @@ async function afficherInbox(container, preferred, project) {
     if (session.username) {
       const logout = el('button', 'Se déconnecter');
       logout.type = 'button';
-      logout.onclick = () => afficherInbox(container, preferred, project);
+      logout.onclick = () => {
+        if (authorization) afficherInbox(container, preferred, project);
+        else fermerSessionOrion().catch(error => { searchStatus.textContent = error.message; });
+      };
       gate.append(el('p', 'Connecté · ' + session.username), logout);
     }
     root.hidden = false;

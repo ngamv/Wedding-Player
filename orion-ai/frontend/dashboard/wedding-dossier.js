@@ -22,7 +22,7 @@ const weddingOptions = {
 };
 const weddingMoney = new Intl.NumberFormat('fr-FR', {style:'currency', currency:'EUR'});
 
-async function afficherDossierWedding(container, request) {
+async function afficherDossierWedding(container, request, preferredReminder) {
   // Chaque chargement possède sa propre vue, même si le dossier sélectionné change.
   const view = document.createElement('section');
   container.replaceChildren(view);
@@ -122,6 +122,7 @@ async function afficherDossierWedding(container, request) {
   function renderReminder(reminder, parent) {
     const row = element('article');
     row.className = 'wedding-record';
+    row.dataset.reminder = [reminder.kind, reminder.target, reminder.due].join(':');
     const states = {draft:'À valider', approved:'Validée', sending:'Envoi en cours', sent:'Acceptée par le serveur SMTP', unknown:'Envoi à vérifier', recorded:'Résultat enregistré', dismissed:'Écartée'};
     row.append(element('strong', reminder.subject),
       element('p', [reminder.due, states[reminder.status], reminder.email].filter(Boolean).join(' · ')),
@@ -251,6 +252,14 @@ async function afficherDossierWedding(container, request) {
   try {
     data = await request('/dossier');
     render();
+    if (preferredReminder) {
+      const row = [...view.querySelectorAll('[data-reminder]')].find(item => item.dataset.reminder === preferredReminder);
+      if (row) {
+        row.closest('details').open = true;
+        row.scrollIntoView({block:'nearest'});
+        row.querySelector('button')?.focus({preventScroll:true});
+      }
+    }
     status.textContent = '';
   } catch (error) {
     status.textContent = error.message;

@@ -2,6 +2,8 @@ const pages = {
   memoire: ['Mémoire', 'Capturez, classez et retrouvez vos informations métier.'],
   ceo: ['Brief du CEO', 'Les échéances et décisions à traiter dans vos activités.'],
   agenda: ['Agenda', 'Retrouvez vos rendez-vous, mariages et échéances dans un seul calendrier.'],
+  validations: ['Validations', 'Examinez les propositions avant d’autoriser leur suite.'],
+  recherche: ['Recherche', 'Retrouvez une fiche ou un document dans ORION.'],
   vue: ['Vue d’ensemble', 'Accédez aux indicateurs et aux priorités de vos activités.'],
   finances: ['Finances', 'Suivez les paiements encaissés et en attente.'],
   site: ['Site web', 'Raccordez vos sites et suivez leurs interventions.'],
@@ -41,13 +43,16 @@ async function lireApi(route) {
 async function afficherBackend() {
   content.innerHTML = panel('Exploitation locale', outils +
     '<p role="status" id="backend-status">Vérification des services…</p>' +
-    '<div data-services></div><h3>Exécutions du brief Wedding</h3><div data-brief-runs></div>' +
+    '<div data-services></div><h3>Bilan de mise en service</h3><div data-capabilities></div><h3>Sauvegarde SQLite</h3><div data-backup></div>' +
+    '<h3>Exécutions du brief Wedding</h3><div data-brief-runs></div>' +
     '<div class="api-links"><a href="' + api + '/status" target="_blank" rel="noopener">État JSON</a>' +
     '<a href="' + api + '/agents" target="_blank" rel="noopener">Catalogue JSON</a></div>');
   content.querySelector('#refresh').addEventListener('click', afficherBackend);
   const status = content.querySelector('#backend-status');
   const services = content.querySelector('[data-services]');
+  const capabilities = content.querySelector('[data-capabilities]');
   const history = content.querySelector('[data-brief-runs]');
+  const backup = content.querySelector('[data-backup]');
   const date = new Intl.DateTimeFormat('fr-FR', {
     dateStyle:'medium', timeStyle:'short', timeZone:'Europe/Paris',
   });
@@ -56,6 +61,25 @@ async function afficherBackend() {
     const labels = {online:'En ligne', warning:'À vérifier', error:'Indisponible'};
     const rows = Object.entries(data.services).map(([name, value]) => [name, labels[value.state], value.detail]);
     services.innerHTML = table(rows, ['Service', 'État', 'Diagnostic']);
+    const readiness = {ready:'Disponible', action:'À configurer', check:'À tester', disabled:'Désactivé'};
+    capabilities.innerHTML = table(Object.entries(data.capabilities).map(([name, value]) =>
+      [name, readiness[value.state], value.detail]), ['Fonction', 'État', 'Diagnostic']);
+    const snapshot = data.backup;
+    const states = {verified:'Archive vérifiée', failed:'Dernière tentative en échec', missing:'Archive introuvable'};
+    if (snapshot) {
+      const info = document.createElement('p');
+      info.textContent = states[snapshot.state] || 'État de la sauvegarde indisponible';
+      backup.append(info);
+      if (snapshot.verified?.at && snapshot.state !== 'missing') {
+        const last = document.createElement('p');
+        last.textContent = 'Dernière archive vérifiée · ' + date.format(new Date(snapshot.verified.at)) +
+          ' · ' + snapshot.verified.archive +
+          (snapshot.verified.manifest_verified ? ' · Empreintes SHA-256 vérifiées' : '');
+        backup.append(last);
+      }
+    } else {
+      backup.textContent = 'Aucune sauvegarde quotidienne enregistrée.';
+    }
     const origins = {dashboard:'Tableau de bord', n8n:'n8n', scheduler:'Rappel local'};
     const runs = data.brief_runs.map(run => [
       date.format(new Date(run.finished_at.replace(' ', 'T') + 'Z')),
@@ -173,8 +197,16 @@ async function render(){
   }
   currentRows=[];
   document.querySelector('#export').hidden=true;
+  if(page==='recherche'){
+    afficherRecherche(content, params.get('q'));
+    return;
+  }
+  if(page==='validations'){
+    afficherValidations(content);
+    return;
+  }
   if(page==='agenda'){
-    afficherAgenda(content);
+    afficherAgenda(content, params.get('date'), params.get('rdv'));
     return;
   }
   if(page==='projets'){
@@ -198,11 +230,11 @@ async function render(){
     return;
   }
   if(page==='site'){
-    afficherSites(content, params.get('dossier'));
+    afficherSites(content, params.get('dossier'), params.get('intervention'));
     return;
   }
   if(page==='wedding'){
-    afficherWedding(content, lireApi, params.get('dossier'));
+    afficherWedding(content, lireApi, params.get('dossier'), params.get('relance'));
     return;
   }
   if(page==='workflows'){
@@ -262,7 +294,8 @@ async function afficherEtatApi() {
   try {
     const etat=await lireApi('/status');
     if(etat.status!=='online') throw new Error('État indisponible');
-    indicateur.textContent=etat.workflows?'Moteur local':'Service en ligne';
+    indicateur.textContent=etat.recovery?'Copie de restauration':(etat.workflows?'Moteur local':'Service en ligne');
+    if(etat.recovery) indicateur.dataset.recovery='true';
     indicateur.dataset.state='online';
   } catch {
     indicateur.textContent='API indisponible';
@@ -271,4 +304,5 @@ async function afficherEtatApi() {
   indicateur.hidden=false;
 }
 afficherEtatApi();
+initialiserSessionOrion();
 render();

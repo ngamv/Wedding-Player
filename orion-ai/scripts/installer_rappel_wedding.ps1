@@ -4,8 +4,11 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $Projet = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$Python = & py -3.12 -c 'import sys; print(sys.executable)'
-if ($LASTEXITCODE -ne 0) { throw 'Python 3.12 requis.' }
+$Python = Join-Path $Projet '.venv\Scripts\python.exe'
+if (-not (Test-Path -LiteralPath $Python)) {
+    $Python = & py -3.12 -c 'import sys; print(sys.executable)'
+    if ($LASTEXITCODE -ne 0) { throw 'Python 3.12 requis.' }
+}
 $Rapport = Join-Path $Projet 'memory\wedding-rappels.json'
 $Nom = 'ORION Wedding - Rappels'
 if (Get-ScheduledTask -TaskName $Nom -ErrorAction SilentlyContinue) {

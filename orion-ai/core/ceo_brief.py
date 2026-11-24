@@ -76,7 +76,11 @@ class CEOBrief:
                         "tickets": "Ticket ouvert"}
             for row in rows:
                 urgent = row["status"] == "urgent" or (row["kind"] == "appointments" and row["day"] == today.isoformat())
-                link = "#support?ticket=" + quote(row["id"], safe="") if row["kind"] == "tickets" else "#ceo?imports=1"
+                link = "#ceo?imports=1"
+                if row["kind"] == "tickets":
+                    link = "#support?ticket=" + quote(row["id"], safe="")
+                elif row["local_appointment"]:
+                    link = "#agenda?date=" + row["day"] + "&rdv=" + quote(row["id"], safe="")
                 add("Données métier", row["title"], captions[row["kind"]], 0 if urgent else 1, link, row["day"])
 
         collect("Wedding", wedding_priorities)

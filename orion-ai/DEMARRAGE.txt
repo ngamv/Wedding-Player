@@ -1,8 +1,21 @@
-Windows : ouvrez PowerShell dans orion-ai et lancez :
-py -3.12 -m pip install -r requirements.txt
-py -3.12 lancer_orion.py
+Windows
 
-macOS : dans le dossier orion-ai, lancez bash lancer_macos.sh
+1. Extrayez l’archive ORION.
+2. Dans le dossier orion-ai extrait, double-cliquez sur Lancer-ORION.cmd.
+3. Gardez la fenêtre ouverte pendant l’utilisation. Le tableau de bord s’ouvre
+   dès que le serveur local répond.
 
-Dashboard : http://127.0.0.1:8000/dashboard/#wedding
-Voir docs/wedding.md pour les rappels, skills et MCP.
+Depuis PowerShell dans le dossier orion-ai, pour vérifier l’installation :
+.\Lancer-ORION.cmd --check
+
+Si le port 8000 est utilisé :
+.\Lancer-ORION.cmd --port 8001
+
+Si le tableau de bord ne répond pas, utilisez Diagnostiquer-ORION.cmd.
+
+Pour contrôler une sauvegarde dans une instance séparée, utilisez Restaurer-ORION.cmd.
+
+macOS : lancez bash lancer_macos.sh --open depuis le dossier orion-ai.
+
+Voir docs/exploitation-locale.md pour le diagnostic et les sauvegardes et
+docs/wedding.md pour les rappels, skills et MCP.

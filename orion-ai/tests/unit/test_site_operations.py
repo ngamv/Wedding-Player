@@ -13,6 +13,7 @@ class SiteOperationsTests(TestCase):
         with TemporaryDirectory() as tmp, patch.dict("os.environ", {
             "ORION_DB": str(Path(tmp) / "orion.db"), "ORION_MODE": "simulation",
         }):
+            self.addCleanup(main.inbox_store.cache_clear)
             self.addCleanup(main.site_operations.cache_clear)
             self.addCleanup(main.workflow_memory.cache_clear)
             with TestClient(main.app) as api:

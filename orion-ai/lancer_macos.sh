@@ -7,6 +7,4 @@ if ! command -v python3.12 >/dev/null 2>&1; then
   exit 1
 fi
 
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-exec .venv/bin/python lancer_orion.py "$@"
+exec python3.12 -m scripts.orion_bootstrap "$@"

@@ -15,6 +15,7 @@ class WeddingWorkflowSourcesTests(TestCase):
             "ORION_MODE": "simulation",
         }):
             self.addCleanup(main.workflow_memory.cache_clear)
+            self.addCleanup(main.inbox_store.cache_clear)
             self.addCleanup(main.wedding_notes.cache_clear)
             self.addCleanup(main.wedding_store.cache_clear)
             with TestClient(main.app) as api:

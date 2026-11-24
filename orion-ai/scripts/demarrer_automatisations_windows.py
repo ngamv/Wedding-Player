@@ -9,8 +9,9 @@ import sys
 import time
 from urllib.request import urlopen
 
+from scripts.orion_n8n import connect_workflow
+
 ROOT = Path(__file__).resolve().parents[1]
-WORKFLOW_ID = "OrionWedding09h1"
 MODEL = "qwen3:0.6b"
 
 
@@ -89,7 +90,6 @@ def main():
         status = attendre(public, "ORION")
     if status.get("mode") != "ollama":
         raise RuntimeError("Fermez l’ancien serveur ORION sur le port 8000, puis relancez ce fichier.")
-    attendre("http://127.0.0.1:8000/api/wedding/daily-report", "Rapport Wedding")
 
     root_n8n = Path(os.environ["LOCALAPPDATA"]) / "ORION-n8n"
     runtime = root_n8n / "runtime"
@@ -106,12 +106,7 @@ def main():
     if appel("http://127.0.0.1:5678/healthz") is not None:
         raise RuntimeError("n8n tourne déjà sur le port 5678. Fermez cette instance puis relancez ce fichier.")
     n8n = [node, str(exe)]
-    existing = run([*n8n, "list:workflow", "--onlyId"], env=n8n_env,
-                   capture_output=True, text=True).stdout.splitlines()
-    if WORKFLOW_ID not in {line.strip() for line in existing}:
-        run([*n8n, "import:workflow", "--input=" + str(ROOT / "automations" / "n8n-wedding-quotidien.json")],
-            env=n8n_env)
-    run([*n8n, "publish:workflow", "--id=" + WORKFLOW_ID], env=n8n_env)
+    connect_workflow(n8n, n8n_env)
     console([*n8n, "start"], n8n_env)
     attendre(ready, "n8n", seconds=90)
     planifier()

@@ -247,6 +247,8 @@ class WeddingDossier:
             data.update(status=status)
             if action == 'approve':
                 data['approved_at'] = today.isoformat()
+            if action == 'dismiss':
+                data['dismissed_at'] = today.isoformat()
             if action == 'record':
                 data['result'] = result
                 data['recorded_at'] = today.isoformat()

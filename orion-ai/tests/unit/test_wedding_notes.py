@@ -11,7 +11,8 @@ from backend import main
 class WeddingNotesTests(TestCase):
     def test_search_edit_and_scope(self):
         with TemporaryDirectory() as directory, patch.dict(
-            "os.environ", {"ORION_WEDDING_DB": str(Path(directory) / "wedding.db")}
+            "os.environ", {"ORION_WEDDING_DB": str(Path(directory) / "wedding.db"),
+                           "ORION_DB": str(Path(directory) / "orion.db")}
         ):
             try:
                 with TestClient(main.app) as api:
@@ -42,5 +43,7 @@ class WeddingNotesTests(TestCase):
                     api.put(url + "/" + key, json={**note, "title": "Plan lumière"}).raise_for_status()
                     self.assertEqual(api.get(url, params={"q": "lumiere"}).json()["notes"][0]["id"], key)
             finally:
+                main.inbox_store.cache_clear()
+                main.workflow_memory.cache_clear()
                 main.wedding_notes.cache_clear()
                 main.wedding_store.cache_clear()

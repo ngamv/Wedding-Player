@@ -7,6 +7,8 @@ from email.utils import formatdate, make_msgid
 
 
 def smtp_config():
+    if os.environ.get("ORION_RECOVERY") == "1":
+        return None
     host = os.environ.get("ORION_SMTP_HOST", "").strip()
     sender = os.environ.get("ORION_SMTP_FROM", "").strip()
     user = os.environ.get("ORION_SMTP_USER", "")

@@ -37,6 +37,7 @@ class WeddingBriefTests(TestCase):
                     self.assertEqual(history["previous"]["date"], yesterday.isoformat())
                     self.assertIsNone(api.get(url + "?jours=14").json()["latest"])
             finally:
+                main.inbox_store.cache_clear()
                 main.brief_journal.cache_clear()
                 main.workflow_memory.cache_clear()
                 main.wedding_dossier.cache_clear()

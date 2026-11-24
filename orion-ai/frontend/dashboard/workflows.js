@@ -175,7 +175,7 @@ function simulerWorkflow(body, agents) {
 }
 
 
-async function afficherWedding(container, lireApi, preferred) {
+async function afficherWedding(container, lireApi, preferred, preferredReminder) {
   container.innerHTML = `
     <div class="wedding-workspace">
       <div class="wedding-navigation" role="group" aria-label="Espace Wedding">
@@ -206,7 +206,7 @@ async function afficherWedding(container, lireApi, preferred) {
   const grille = container.querySelector('.wedding-presets');
   const attente = container.querySelector('[role=status]');
   const atelier = container.querySelector('.wedding-workflow');
-  afficherChecklistWedding(work, lireApi, navigate, preferred);
+  afficherChecklistWedding(work, lireApi, navigate, preferred, preferredReminder);
   try {
     const presets = await lireApi('/wedding');
     if (!grille.isConnected) return;

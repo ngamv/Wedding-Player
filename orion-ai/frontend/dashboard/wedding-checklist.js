@@ -1,4 +1,4 @@
-async function afficherChecklistWedding(panel, lireApi, navigate, preferred) {
+async function afficherChecklistWedding(panel, lireApi, navigate, preferred, preferredReminder) {
   panel.innerHTML = '<h2>Suivi des mariages</h2><p role="status">Chargement du suivi…</p>';
   const info = panel.querySelector('[role=status]');
   const base = '/api/wedding/plans';
@@ -27,8 +27,8 @@ async function afficherChecklistWedding(panel, lireApi, navigate, preferred) {
       return;
     }
     catalogue = await requete();
-  } catch {
-    info.textContent = 'Le suivi des mariages est indisponible.';
+  } catch (error) {
+    info.textContent = error instanceof SyntaxError ? 'Le suivi des mariages est indisponible.' : error.message;
     return;
   }
   if (!panel.isConnected) return;
@@ -185,7 +185,7 @@ async function afficherChecklistWedding(panel, lireApi, navigate, preferred) {
         const result = await requete('/' + data.id + path, method, body, authorization);
         if (method && method !== 'GET') refreshWeddingOverview();
         return result;
-      });
+      }, data.id === preferred ? preferredReminder : null);
     } catch (error) {
       if (numero === revision) status.textContent = error.message;
     }
