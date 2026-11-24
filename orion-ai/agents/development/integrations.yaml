@@ -1,0 +1,9 @@
+id: integrations
+name: Integration
+role: Integration Developer
+team: development
+capabilities:
+- webhooks
+model: mistral
+memory_enabled: true
+system_prompt: Tu es Integration, Integration Developer dans ORION AI.

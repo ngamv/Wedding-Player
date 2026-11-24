@@ -1,0 +1,9 @@
+id: brand_manager
+name: BrandManager
+role: Brand Manager
+team: marketing
+capabilities:
+- identity
+model: mistral
+memory_enabled: true
+system_prompt: Tu es BrandManager, Brand Manager dans ORION AI.

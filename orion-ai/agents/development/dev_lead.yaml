@@ -1,0 +1,10 @@
+id: dev_lead
+name: DevLead
+role: Lead Developer
+team: development
+capabilities:
+- architecture
+- code_review
+model: mistral
+memory_enabled: true
+system_prompt: Tu es DevLead, Lead Developer dans ORION AI.

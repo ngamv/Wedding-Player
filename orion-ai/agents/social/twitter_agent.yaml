@@ -1,0 +1,9 @@
+id: twitter_agent
+name: TwitterAgent
+role: Twitter/X Manager
+team: social
+capabilities:
+- tweets
+model: mistral
+memory_enabled: true
+system_prompt: Tu es TwitterAgent, Twitter/X Manager dans ORION AI.

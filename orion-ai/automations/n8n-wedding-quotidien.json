@@ -1,0 +1,113 @@
+{
+  "id": "OrionWedding09h1",
+  "name": "Rapport Wedding ORION",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 9,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "19a01f39-2b2b-4c5a-8429-dd4acc4e2aec",
+      "name": "Chaque jour à 09 h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "56256b41-5ee8-4f3d-b691-412aafd32792",
+      "name": "Essai manuel",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        170
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:8000/api/wedding/daily-report?jours=7",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "bee3c3fa-4962-426e-835b-9001263bdfc4",
+      "name": "Lire le rapport ORION",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        280,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/api/wedding/brief?jours=7&source=n8n",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "bd861c39-d8cc-4d2a-afcb-2a7ee75aa077",
+      "name": "Enregistrer le brief quotidien",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Chaque jour à 09 h": {
+      "main": [
+        [
+          {
+            "node": "Lire le rapport ORION",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Essai manuel": {
+      "main": [
+        [
+          {
+            "node": "Lire le rapport ORION",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lire le rapport ORION": {
+      "main": [
+        [
+          {
+            "node": "Enregistrer le brief quotidien",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Europe/Paris",
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "all"
+  }
+}

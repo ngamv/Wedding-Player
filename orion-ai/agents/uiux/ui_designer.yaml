@@ -1,0 +1,9 @@
+id: ui_designer
+name: UIDesigner
+role: UI Designer
+team: uiux
+capabilities:
+- design_system
+model: mistral
+memory_enabled: true
+system_prompt: Tu es UIDesigner, UI Designer dans ORION AI.

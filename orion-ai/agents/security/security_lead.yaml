@@ -1,0 +1,9 @@
+id: security_lead
+name: SecurityLead
+role: Security Lead
+team: security
+capabilities:
+- audits
+model: mistral
+memory_enabled: true
+system_prompt: Tu es SecurityLead, Security Lead dans ORION AI.

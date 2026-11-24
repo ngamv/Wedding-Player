@@ -1,0 +1,10 @@
+id: cloud_eng
+name: CloudEng
+role: Cloud Engineer
+team: devops
+capabilities:
+- docker
+- kubernetes
+model: mistral
+memory_enabled: true
+system_prompt: Tu es CloudEng, Cloud Engineer dans ORION AI.

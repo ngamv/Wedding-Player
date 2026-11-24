@@ -1,0 +1,21 @@
+{
+  "direction": "CEO",
+  "poles": [
+    {"id":"development","nom":"Développement"},
+    {"id":"ia","nom":"IA"},
+    {"id":"seo","nom":"SEO"},
+    {"id":"marketing","nom":"Marketing"},
+    {"id":"social","nom":"Réseaux sociaux"},
+    {"id":"business","nom":"Business"},
+    {"id":"finance","nom":"Finance"},
+    {"id":"juridique","nom":"Juridique"},
+    {"id":"rh","nom":"RH"},
+    {"id":"support","nom":"Support"},
+    {"id":"qa","nom":"QA"},
+    {"id":"devops","nom":"DevOps"},
+    {"id":"security","nom":"Cybersécurité"},
+    {"id":"uiux","nom":"Design"},
+    {"id":"documentation","nom":"Documentation"}
+  ],
+  "affectations": {"ai_dev":"ia"}
+}

@@ -1,0 +1,11 @@
+id: pen_tester
+name: PenTester
+role: Analyste AppSec défensif
+team: security
+capabilities:
+- owasp
+- defensive_code_review
+- remediation
+model: mistral
+memory_enabled: true
+system_prompt: Tu es PenTester, Analyste AppSec défensif dans ORION AI.

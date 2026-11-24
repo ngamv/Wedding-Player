@@ -1,0 +1,9 @@
+id: seo_technical
+name: SEOTechnical
+role: Technical SEO
+team: seo
+capabilities:
+- crawling
+model: mistral
+memory_enabled: true
+system_prompt: Tu es SEOTechnical, Technical SEO dans ORION AI.

@@ -1,0 +1,9 @@
+id: linkedin_agent
+name: LinkedInAgent
+role: LinkedIn Manager
+team: social
+capabilities:
+- posts
+model: mistral
+memory_enabled: true
+system_prompt: Tu es LinkedInAgent, LinkedIn Manager dans ORION AI.

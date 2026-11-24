@@ -1,0 +1,9 @@
+id: ads_manager
+name: AdsManager
+role: Ads Manager
+team: marketing
+capabilities:
+- google_ads
+model: mistral
+memory_enabled: true
+system_prompt: Tu es AdsManager, Ads Manager dans ORION AI.

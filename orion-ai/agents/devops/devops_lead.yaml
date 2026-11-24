@@ -1,0 +1,9 @@
+id: devops_lead
+name: DevOpsLead
+role: DevOps Lead
+team: devops
+capabilities:
+- ci_cd
+model: mistral
+memory_enabled: true
+system_prompt: Tu es DevOpsLead, DevOps Lead dans ORION AI.

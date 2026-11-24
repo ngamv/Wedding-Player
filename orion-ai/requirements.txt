@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+PyYAML==6.0.3
+
+chromadb>=1.0,<2
+
+mcp>=1.12,<2
+
+tzdata
+
+python-multipart>=0.0.22,<1

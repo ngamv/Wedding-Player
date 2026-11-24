@@ -1,0 +1,10 @@
+id: ai_dev
+name: AIDev
+role: AI/ML Developer
+team: development
+capabilities:
+- llm
+- rag
+model: mistral
+memory_enabled: true
+system_prompt: Tu es AIDev, AI/ML Developer dans ORION AI.

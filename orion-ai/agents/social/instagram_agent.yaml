@@ -1,0 +1,9 @@
+id: instagram_agent
+name: InstagramAgent
+role: Instagram Manager
+team: social
+capabilities:
+- reels
+model: mistral
+memory_enabled: true
+system_prompt: Tu es InstagramAgent, Instagram Manager dans ORION AI.

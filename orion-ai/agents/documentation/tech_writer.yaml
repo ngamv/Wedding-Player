@@ -1,0 +1,9 @@
+id: tech_writer
+name: TechWriter
+role: Technical Writer
+team: documentation
+capabilities:
+- api_docs
+model: mistral
+memory_enabled: true
+system_prompt: Tu es TechWriter, Technical Writer dans ORION AI.

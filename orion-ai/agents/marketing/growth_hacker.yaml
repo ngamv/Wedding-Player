@@ -1,0 +1,9 @@
+id: growth_hacker
+name: GrowthHacker
+role: Growth Hacker
+team: marketing
+capabilities:
+- acquisition
+model: mistral
+memory_enabled: true
+system_prompt: Tu es GrowthHacker, Growth Hacker dans ORION AI.

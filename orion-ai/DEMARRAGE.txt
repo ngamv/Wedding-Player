@@ -1,0 +1,8 @@
+Windows : ouvrez PowerShell dans orion-ai et lancez :
+py -3.12 -m pip install -r requirements.txt
+py -3.12 lancer_orion.py
+
+macOS : dans le dossier orion-ai, lancez bash lancer_macos.sh
+
+Dashboard : http://127.0.0.1:8000/dashboard/#wedding
+Voir docs/wedding.md pour les rappels, skills et MCP.

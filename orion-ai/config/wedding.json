@@ -1,0 +1,64 @@
+[
+  {
+    "id": "decouverte",
+    "title": "Prospection et découverte",
+    "task": "Recueillir date, budget plafond, financement, taille et priorités des invités, et type de cérémonie. Livrer le brief et les décisions ouvertes.",
+    "agent_ids": [
+      "wedding_prospection",
+      "wedding_brief",
+      "wedding_client"
+    ]
+  },
+  {
+    "id": "conception",
+    "title": "Conception et planification",
+    "task": "Dater les jalons, ventiler le budget avec une réserve pour imprévus, puis décrire palette et contraintes de réalisation.",
+    "agent_ids": [
+      "wedding_concept",
+      "wedding_planning",
+      "wedding_budget",
+      "wedding_scenographie"
+    ]
+  },
+  {
+    "id": "prestataires",
+    "title": "Prestataires et réservations",
+    "task": "Comparer lieux et devis fournis, capacité, accessibilité, solution pluie, inclusions, acomptes et conditions d’annulation. Livrer un comparatif et les décisions à valider.",
+    "agent_ids": [
+      "wedding_lieu",
+      "wedding_traiteur",
+      "wedding_photo",
+      "wedding_ambiance",
+      "wedding_devis"
+    ]
+  },
+  {
+    "id": "preparation",
+    "title": "Préparation opérationnelle",
+    "task": "Vérifier prérequis des faire-part et RSVP, puis préparer relances, plan de table, contraintes alimentaires agrégées et logistique.",
+    "agent_ids": [
+      "wedding_rsvp",
+      "wedding_tables",
+      "wedding_transport",
+      "wedding_invitations"
+    ]
+  },
+  {
+    "id": "jour-j",
+    "title": "Coordination Jour J",
+    "task": "Réunir le déroulé horaire, les responsables, les confirmations prestataires, les soldes à préparer et les solutions de repli. Livrer une feuille de route prête à relire.",
+    "agent_ids": [
+      "wedding_jourj",
+      "wedding_imprevus"
+    ]
+  },
+  {
+    "id": "cloture",
+    "title": "Clôture et fidélisation",
+    "task": "Préparer le retour du matériel, le rapprochement financier, les remerciements et deux sauvegardes des médias. Signaler les démarches administratives à confirmer.",
+    "agent_ids": [
+      "wedding_cloture",
+      "wedding_bilan"
+    ]
+  }
+]

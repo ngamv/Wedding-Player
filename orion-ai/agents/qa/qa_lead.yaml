@@ -1,0 +1,9 @@
+id: qa_lead
+name: QALead
+role: QA Lead
+team: qa
+capabilities:
+- test_strategy
+model: mistral
+memory_enabled: true
+system_prompt: Tu es QALead, QA Lead dans ORION AI.

@@ -1,0 +1,9 @@
+id: ux_writer
+name: UXWriter
+role: UX Writer
+team: uiux
+capabilities:
+- microcopy
+model: mistral
+memory_enabled: true
+system_prompt: Tu es UXWriter, UX Writer dans ORION AI.

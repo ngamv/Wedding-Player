@@ -1,0 +1,9 @@
+id: qa_automation
+name: QAAutomation
+role: QA Automation
+team: qa
+capabilities:
+- pytest
+model: mistral
+memory_enabled: true
+system_prompt: Tu es QAAutomation, QA Automation dans ORION AI.

@@ -1,0 +1,10 @@
+id: api_dev
+name: APIDev
+role: API Developer
+team: development
+capabilities:
+- rest
+- graphql
+model: mistral
+memory_enabled: true
+system_prompt: Tu es APIDev, API Developer dans ORION AI.

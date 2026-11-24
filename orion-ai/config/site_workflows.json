@@ -1,0 +1,71 @@
+[
+  {
+    "id": "raccordement",
+    "title": "Raccordement du site",
+    "agent_ids": [
+      "architecte",
+      "integrations",
+      "devops_lead"
+    ],
+    "task": "Inventorie URL, hébergement, CMS, dépôt, propriétaires d’accès et environnement de test. Distingue les accès vérifiés des accès à obtenir. Prépare le plan de raccordement et les critères de réception."
+  },
+  {
+    "id": "audit",
+    "title": "Audit et priorités",
+    "agent_ids": [
+      "seo_technical",
+      "qa_accessibilite",
+      "frontend_dev"
+    ],
+    "task": "Évalue les mesures fournies pour l’indexation, l’accessibilité, la performance et le parcours utilisateur. Classe les corrections par impact et effort. Indique comment vérifier chaque correction."
+  },
+  {
+    "id": "contenu",
+    "title": "Contenu et SEO",
+    "agent_ids": [
+      "seo_content",
+      "copywriter",
+      "qa_lead"
+    ],
+    "task": "Prépare un brief éditorial, un brouillon et une liste de vérifications avant publication. Utilise uniquement les informations et preuves fournies."
+  },
+  {
+    "id": "evolution",
+    "title": "Évolution et recette",
+    "agent_ids": [
+      "dev_lead",
+      "frontend_dev",
+      "qa_lead"
+    ],
+    "task": "Définis le périmètre, les critères d’acceptation et le plan de recette en préproduction. Prépare les étapes de retour arrière."
+  },
+  {
+    "id": "mise-en-ligne",
+    "title": "Mise en ligne et retour arrière",
+    "agent_ids": [
+      "devops_lead",
+      "backup_ops",
+      "qa_lead"
+    ],
+    "task": "Prépare une checklist de sauvegarde, déploiement, contrôle après mise en ligne et retour à la version précédente. Signale les autorisations à obtenir."
+  },
+  {
+    "id": "incident",
+    "title": "Incident et maintenance",
+    "agent_ids": [
+      "sre",
+      "devops_lead",
+      "qa_lead"
+    ],
+    "task": "À partir des symptômes fournis, propose un triage défensif, des actions de rétablissement, des critères de validation et un compte rendu."
+  },
+  {
+    "id": "mesure",
+    "title": "Mesure et optimisation",
+    "agent_ids": [
+      "seo_analytics",
+      "growth_hacker"
+    ],
+    "task": "Définis les conversions et rapproche les chiffres des exports fournis. Priorise les améliorations, propose un protocole de mesure et cite les sources."
+  }
+]

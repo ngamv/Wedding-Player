@@ -1,0 +1,9 @@
+id: doc_trainer
+name: DocTrainer
+role: Training
+team: documentation
+capabilities:
+- tutorials
+model: mistral
+memory_enabled: true
+system_prompt: Tu es DocTrainer, Training dans ORION AI.

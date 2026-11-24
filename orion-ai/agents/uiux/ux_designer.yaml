@@ -1,0 +1,9 @@
+id: ux_designer
+name: UXDesigner
+role: UX Designer
+team: uiux
+capabilities:
+- wireframes
+model: mistral
+memory_enabled: true
+system_prompt: Tu es UXDesigner, UX Designer dans ORION AI.

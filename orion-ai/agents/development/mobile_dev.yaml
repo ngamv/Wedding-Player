@@ -1,0 +1,9 @@
+id: mobile_dev
+name: MobileDev
+role: Mobile Developer
+team: development
+capabilities:
+- react_native
+model: mistral
+memory_enabled: true
+system_prompt: Tu es MobileDev, Mobile Developer dans ORION AI.

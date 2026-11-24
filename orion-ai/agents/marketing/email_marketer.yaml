@@ -1,0 +1,9 @@
+id: email_marketer
+name: EmailMarketer
+role: Email Marketing
+team: marketing
+capabilities:
+- newsletters
+model: mistral
+memory_enabled: true
+system_prompt: Tu es EmailMarketer, Email Marketing dans ORION AI.

@@ -1,0 +1,9 @@
+id: content_marketer
+name: ContentMarketer
+role: Content Marketer
+team: marketing
+capabilities:
+- blog
+model: mistral
+memory_enabled: true
+system_prompt: Tu es ContentMarketer, Content Marketer dans ORION AI.

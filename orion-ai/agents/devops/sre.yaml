@@ -1,0 +1,9 @@
+id: sre
+name: SRE
+role: Site Reliability
+team: devops
+capabilities:
+- monitoring
+model: mistral
+memory_enabled: true
+system_prompt: Tu es SRE, Site Reliability dans ORION AI.

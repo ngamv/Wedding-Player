@@ -1,0 +1,10 @@
+id: backend_dev
+name: BackendDev
+role: Backend Developer
+team: development
+capabilities:
+- python
+- fastapi
+model: mistral
+memory_enabled: true
+system_prompt: Tu es BackendDev, Backend Developer dans ORION AI.

@@ -1,0 +1,1214 @@
+[
+  {
+    "id": 1,
+    "titre": "Définir le budget global",
+    "offset": -450,
+    "categorie": "Budget",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 2,
+    "titre": "Savoir qui participe au financement",
+    "offset": -440,
+    "categorie": "Budget",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 3,
+    "titre": "Faire une première liste d'invités",
+    "offset": -430,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 4,
+    "titre": "Choisir le type de cérémonie",
+    "offset": -430,
+    "categorie": "Cérémonies",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 5,
+    "titre": "Fixer la date avec la mairie",
+    "offset": -420,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 6,
+    "titre": "Visiter et réserver le lieu de réception",
+    "offset": -400,
+    "categorie": "Lieu & réception",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      1,
+      3,
+      5
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 7,
+    "titre": "Choisir les témoins",
+    "offset": -380,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 8,
+    "titre": "Contacter la paroisse ou l'officiant religieux",
+    "offset": -365,
+    "categorie": "Cérémonies",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      4
+    ],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "religieuse"
+  },
+  {
+    "id": 9,
+    "titre": "Mettre en place le suivi des contrats et acomptes",
+    "offset": -360,
+    "categorie": "Budget",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 10,
+    "titre": "Réserver le traiteur",
+    "offset": -330,
+    "categorie": "Prestataires",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      6
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 11,
+    "titre": "Réserver le photographe",
+    "offset": -330,
+    "categorie": "Prestataires",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      5
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 12,
+    "titre": "Réserver le vidéaste",
+    "offset": -320,
+    "categorie": "Prestataires",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 13,
+    "titre": "Réserver le DJ ou le groupe",
+    "offset": -300,
+    "categorie": "Prestataires",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      6
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 14,
+    "titre": "Trouver l'officiant de la cérémonie laïque",
+    "offset": -300,
+    "categorie": "Cérémonies",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      4
+    ],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "laique"
+  },
+  {
+    "id": 15,
+    "titre": "Souscrire une assurance annulation",
+    "offset": -300,
+    "categorie": "Budget",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 16,
+    "titre": "Choisir le thème et les couleurs",
+    "offset": -300,
+    "categorie": "Décoration & fleurs",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 17,
+    "titre": "Commencer la recherche de la robe",
+    "offset": -300,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 18,
+    "titre": "Suivre la préparation au mariage religieux",
+    "offset": -270,
+    "categorie": "Cérémonies",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      8
+    ],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "religieuse"
+  },
+  {
+    "id": 19,
+    "titre": "Prévoir l'hébergement des invités",
+    "offset": -270,
+    "categorie": "Lieu & réception",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      6
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 20,
+    "titre": "Envoyer les save-the-date",
+    "offset": -270,
+    "categorie": "Invités & papeterie",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      3,
+      6
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 21,
+    "titre": "Commander la robe",
+    "offset": -240,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      17
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 22,
+    "titre": "Choisir la destination de la lune de miel",
+    "offset": -240,
+    "categorie": "Lune de miel",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "lune_de_miel"
+  },
+  {
+    "id": 23,
+    "titre": "Réserver le fleuriste",
+    "offset": -240,
+    "categorie": "Prestataires",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 24,
+    "titre": "Réserver coiffure et maquillage",
+    "offset": -210,
+    "categorie": "Prestataires",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 25,
+    "titre": "Vérifier passeports et visas",
+    "offset": -210,
+    "categorie": "Lune de miel",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      22
+    ],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "lune_de_miel"
+  },
+  {
+    "id": 26,
+    "titre": "Créer le site du mariage ou la liste de mariage",
+    "offset": -200,
+    "categorie": "Invités & papeterie",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 27,
+    "titre": "Faire un point sur le budget",
+    "offset": -200,
+    "categorie": "Budget",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 28,
+    "titre": "Choisir le costume",
+    "offset": -180,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 29,
+    "titre": "Réserver le pâtissier (pièce montée ou wedding cake)",
+    "offset": -180,
+    "categorie": "Prestataires",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 30,
+    "titre": "Prendre rendez-vous chez le notaire",
+    "offset": -180,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false,
+    "option": "contrat"
+  },
+  {
+    "id": 31,
+    "titre": "Finaliser la liste des invités",
+    "offset": -180,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      3
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 32,
+    "titre": "Réserver la lune de miel",
+    "offset": -180,
+    "categorie": "Lune de miel",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      22
+    ],
+    "validation_administrative": false,
+    "validation_externe": true,
+    "option": "lune_de_miel"
+  },
+  {
+    "id": 33,
+    "titre": "Commander les faire-part",
+    "offset": -150,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      31
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 34,
+    "titre": "Réserver les transports",
+    "offset": -150,
+    "categorie": "Jour J & logistique",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 35,
+    "titre": "Louer le matériel",
+    "offset": -150,
+    "categorie": "Lieu & réception",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      6
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 36,
+    "titre": "Choisir les animations",
+    "offset": -150,
+    "categorie": "Animations & souvenirs",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 37,
+    "titre": "Choisir les alliances",
+    "offset": -150,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 38,
+    "titre": "Poser le congé pour mariage",
+    "offset": -120,
+    "categorie": "Mairie & administratif",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 39,
+    "titre": "Commander les alliances",
+    "offset": -120,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      37
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 40,
+    "titre": "Retirer le dossier de mariage en mairie",
+    "offset": -120,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 41,
+    "titre": "Constituer le dossier du mariage religieux",
+    "offset": -120,
+    "categorie": "Cérémonies",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      8
+    ],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "religieuse"
+  },
+  {
+    "id": 42,
+    "titre": "Vérifier les contraintes du lieu",
+    "offset": -120,
+    "categorie": "Lieu & réception",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 43,
+    "titre": "Envoyer les faire-part",
+    "offset": -100,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      33
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 44,
+    "titre": "Demander les actes de naissance",
+    "offset": -90,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      40
+    ],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 45,
+    "titre": "Rassembler pièces d'identité et justificatifs de domicile",
+    "offset": -90,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      40
+    ],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 46,
+    "titre": "Récupérer les informations des témoins",
+    "offset": -90,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "témoins",
+    "dependances": [
+      7
+    ],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 47,
+    "titre": "Premier essayage de la robe",
+    "offset": -90,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      21
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 48,
+    "titre": "Choisir chaussures et accessoires",
+    "offset": -90,
+    "categorie": "Tenues & beauté",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 49,
+    "titre": "Faire la dégustation et choisir le menu",
+    "offset": -90,
+    "categorie": "Prestataires",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      10
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 50,
+    "titre": "Choisir et commander la décoration",
+    "offset": -90,
+    "categorie": "Décoration & fleurs",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      16
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 51,
+    "titre": "Préparer l'ouverture de bal",
+    "offset": -90,
+    "categorie": "Animations & souvenirs",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 52,
+    "titre": "Signer le contrat de mariage",
+    "offset": -75,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      30
+    ],
+    "validation_administrative": true,
+    "validation_externe": true,
+    "option": "contrat"
+  },
+  {
+    "id": 53,
+    "titre": "Choisir les vins et les boissons",
+    "offset": -75,
+    "categorie": "Prestataires",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 54,
+    "titre": "Déposer le dossier de mariage en mairie",
+    "offset": -60,
+    "categorie": "Mairie & administratif",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      44,
+      45,
+      46,
+      52
+    ],
+    "validation_administrative": true,
+    "validation_externe": true
+  },
+  {
+    "id": 55,
+    "titre": "Faire l'essai coiffure et maquillage",
+    "offset": -60,
+    "categorie": "Prestataires",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      24
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 56,
+    "titre": "Valider les compositions florales",
+    "offset": -60,
+    "categorie": "Décoration & fleurs",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      23
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 57,
+    "titre": "Suivre les réponses des invités",
+    "offset": -60,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      43
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 58,
+    "titre": "Choisir les lectures et les chants",
+    "offset": -60,
+    "categorie": "Cérémonies",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      18
+    ],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "religieuse"
+  },
+  {
+    "id": 59,
+    "titre": "Créer l'appareil photo partagé AFTERFLASH",
+    "offset": -60,
+    "categorie": "Animations & souvenirs",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 60,
+    "titre": "Confirmer les congés autour du mariage",
+    "offset": -60,
+    "categorie": "Mairie & administratif",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 61,
+    "titre": "Passer l'audition en mairie (si demandée)",
+    "offset": -45,
+    "categorie": "Mairie & administratif",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      54
+    ],
+    "validation_administrative": true,
+    "validation_externe": false,
+    "option": "audition"
+  },
+  {
+    "id": 62,
+    "titre": "Préparer la cérémonie civile",
+    "offset": -45,
+    "categorie": "Cérémonies",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 63,
+    "titre": "Préparer la playlist avec le DJ",
+    "offset": -45,
+    "categorie": "Animations & souvenirs",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      13
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 64,
+    "titre": "Organiser l'EVJF ou l'EVG",
+    "offset": -45,
+    "categorie": "Animations & souvenirs",
+    "priorite": "importante",
+    "responsable": "témoins",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 65,
+    "titre": "Relancer les invités sans réponse",
+    "offset": -35,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      57
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 66,
+    "titre": "Recenser régimes et allergies",
+    "offset": -30,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      57
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 67,
+    "titre": "Écrire le déroulé du jour J",
+    "offset": -30,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 68,
+    "titre": "Désigner le référent du jour J",
+    "offset": -30,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 69,
+    "titre": "Faire les retouches du costume",
+    "offset": -30,
+    "categorie": "Tenues & beauté",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      28
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 70,
+    "titre": "Préparer les discours",
+    "offset": -30,
+    "categorie": "Animations & souvenirs",
+    "priorite": "importante",
+    "responsable": "témoins",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 71,
+    "titre": "Lister les soldes à payer",
+    "offset": -30,
+    "categorie": "Budget",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 72,
+    "titre": "Préparer les cadeaux et remerciements",
+    "offset": -30,
+    "categorie": "Jour J & logistique",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 73,
+    "titre": "Faire le plan de table",
+    "offset": -21,
+    "categorie": "Invités & papeterie",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      65
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 74,
+    "titre": "Préparer menus, marque-places et plan de table",
+    "offset": -21,
+    "categorie": "Décoration & fleurs",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      73
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 75,
+    "titre": "Donner le nombre définitif au traiteur",
+    "offset": -14,
+    "categorie": "Prestataires",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      65
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 76,
+    "titre": "Dernier essayage de la robe",
+    "offset": -14,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      47
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 77,
+    "titre": "Récupérer les alliances",
+    "offset": -14,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      39
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 78,
+    "titre": "Imprimer les QR codes AFTERFLASH pour les tables",
+    "offset": -10,
+    "categorie": "Animations & souvenirs",
+    "priorite": "importante",
+    "responsable": "personne de confiance",
+    "dependances": [
+      59
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 79,
+    "titre": "Confirmer tous les prestataires",
+    "offset": -10,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "personne de confiance",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 80,
+    "titre": "Envoyer le déroulé aux prestataires et aux témoins",
+    "offset": -10,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      67
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 81,
+    "titre": "Préparer les enveloppes ou virements des soldes",
+    "offset": -7,
+    "categorie": "Budget",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      71
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 82,
+    "titre": "Préparer le kit de secours",
+    "offset": -7,
+    "categorie": "Jour J & logistique",
+    "priorite": "importante",
+    "responsable": "personne de confiance",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 83,
+    "titre": "Préparer la valise de la lune de miel",
+    "offset": -5,
+    "categorie": "Lune de miel",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      32
+    ],
+    "validation_administrative": false,
+    "validation_externe": false,
+    "option": "lune_de_miel"
+  },
+  {
+    "id": 84,
+    "titre": "Récupérer la robe",
+    "offset": -5,
+    "categorie": "Tenues & beauté",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [
+      76
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 85,
+    "titre": "Prendre soin de soi (manucure, coiffeur)",
+    "offset": -2,
+    "categorie": "Tenues & beauté",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 86,
+    "titre": "Répéter la cérémonie",
+    "offset": -2,
+    "categorie": "Cérémonies",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 87,
+    "titre": "Installer la salle et la décoration",
+    "offset": -1,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "personne de confiance",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 88,
+    "titre": "Confier les alliances à un témoin",
+    "offset": -1,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "témoins",
+    "dependances": [
+      77
+    ],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 89,
+    "titre": "Désigner qui garde les objets de valeur",
+    "offset": -1,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "personne de confiance",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 90,
+    "titre": "Jour J : profiter !",
+    "offset": 0,
+    "categorie": "Jour J & logistique",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 91,
+    "titre": "Récupérer l'urne et les cadeaux",
+    "offset": 1,
+    "categorie": "Après le mariage",
+    "priorite": "essentielle",
+    "responsable": "personne de confiance",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 92,
+    "titre": "Rendre le matériel loué",
+    "offset": 2,
+    "categorie": "Après le mariage",
+    "priorite": "essentielle",
+    "responsable": "personne de confiance",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 93,
+    "titre": "Partager l'album AFTERFLASH avec les invités",
+    "offset": 7,
+    "categorie": "Après le mariage",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [
+      59
+    ],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 94,
+    "titre": "Faire nettoyer la robe et le costume",
+    "offset": 14,
+    "categorie": "Après le mariage",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 95,
+    "titre": "Laisser un avis aux prestataires",
+    "offset": 14,
+    "categorie": "Après le mariage",
+    "priorite": "optionnelle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  },
+  {
+    "id": 96,
+    "titre": "Envoyer les cartes de remerciement",
+    "offset": 30,
+    "categorie": "Après le mariage",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": true
+  },
+  {
+    "id": 97,
+    "titre": "Mettre à jour vos documents (nom d'usage, si souhaité)",
+    "offset": 30,
+    "categorie": "Après le mariage",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 98,
+    "titre": "Mettre à jour mutuelle et assurances",
+    "offset": 30,
+    "categorie": "Après le mariage",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 99,
+    "titre": "Signaler le mariage aux impôts",
+    "offset": 60,
+    "categorie": "Après le mariage",
+    "priorite": "essentielle",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": true,
+    "validation_externe": false
+  },
+  {
+    "id": 100,
+    "titre": "Récupérer photos et vidéo des prestataires",
+    "offset": 60,
+    "categorie": "Après le mariage",
+    "priorite": "importante",
+    "responsable": "mariés",
+    "dependances": [],
+    "validation_administrative": false,
+    "validation_externe": false
+  }
+]

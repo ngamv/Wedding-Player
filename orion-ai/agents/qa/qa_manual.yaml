@@ -1,0 +1,9 @@
+id: qa_manual
+name: QAManual
+role: QA Manual
+team: qa
+capabilities:
+- test_cases
+model: mistral
+memory_enabled: true
+system_prompt: Tu es QAManual, QA Manual dans ORION AI.

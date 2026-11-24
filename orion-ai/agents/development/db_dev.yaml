@@ -1,0 +1,10 @@
+id: db_dev
+name: DBDev
+role: Database Developer
+team: development
+capabilities:
+- postgresql
+- redis
+model: mistral
+memory_enabled: true
+system_prompt: Tu es DBDev, Database Developer dans ORION AI.

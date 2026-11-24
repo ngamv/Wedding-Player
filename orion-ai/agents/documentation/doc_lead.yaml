@@ -1,0 +1,9 @@
+id: doc_lead
+name: DocLead
+role: Documentation Lead
+team: documentation
+capabilities:
+- strategy
+model: mistral
+memory_enabled: true
+system_prompt: Tu es DocLead, Documentation Lead dans ORION AI.

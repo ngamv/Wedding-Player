@@ -1,0 +1,9 @@
+id: tiktok_agent
+name: TikTokAgent
+role: TikTok Manager
+team: social
+capabilities:
+- videos
+model: mistral
+memory_enabled: true
+system_prompt: Tu es TikTokAgent, TikTok Manager dans ORION AI.

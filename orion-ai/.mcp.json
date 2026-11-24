@@ -1,0 +1,132 @@
+{
+  "mcpServers": {
+    "ruflo": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "ruflo@3.79.0",
+        "mcp",
+        "start"
+      ]
+    },
+    "orion-wedding": {
+      "command": "python",
+      "args": [
+        "-m",
+        "backend.wedding_mcp"
+      ]
+    },
+    "ecc-memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "env": {
+        "MEMORY_FILE_PATH": "/workspace/work/orion-ai/memory/ecc-memory.jsonl"
+      }
+    },
+    "ecc-omega-memory": {
+      "command": "uvx",
+      "args": [
+        "omega-memory",
+        "serve"
+      ]
+    },
+    "ecc-deja-vu": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@vshulcz/deja-vu@0.24.0",
+        "mcp"
+      ],
+      "env": {
+        "DEJA_OFFLINE": "1"
+      }
+    },
+    "ecc-sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking@2.2.0"
+      ]
+    },
+    "ecc-vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    },
+    "ecc-railway": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@railway/mcp-server"
+      ]
+    },
+    "ecc-cloudflare-docs": {
+      "type": "http",
+      "url": "https://docs.mcp.cloudflare.com/mcp"
+    },
+    "ecc-cloudflare-workers-builds": {
+      "type": "http",
+      "url": "https://builds.mcp.cloudflare.com/mcp"
+    },
+    "ecc-cloudflare-workers-bindings": {
+      "type": "http",
+      "url": "https://bindings.mcp.cloudflare.com/mcp"
+    },
+    "ecc-cloudflare-observability": {
+      "type": "http",
+      "url": "https://observability.mcp.cloudflare.com/mcp"
+    },
+    "ecc-clickhouse": {
+      "type": "http",
+      "url": "https://mcp.clickhouse.cloud/mcp"
+    },
+    "ecc-parallel-search": {
+      "type": "http",
+      "url": "https://search.parallel.ai/mcp"
+    },
+    "ecc-context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ]
+    },
+    "ecc-magic": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@magicuidesign/mcp@latest"
+      ]
+    },
+    "ecc-filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/workspace/work/orion-ai/mcp-partage"
+      ]
+    },
+    "ecc-playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp",
+        "--executable-path",
+        "/usr/bin/chromium"
+      ]
+    },
+    "ecc-token-optimizer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "token-optimizer-mcp"
+      ]
+    },
+    "ecc-laraplugins": {
+      "type": "http",
+      "url": "https://laraplugins.io/mcp/plugins"
+    }
+  }
+}

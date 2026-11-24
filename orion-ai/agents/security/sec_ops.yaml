@@ -1,0 +1,9 @@
+id: sec_ops
+name: SecOps
+role: Security Ops
+team: security
+capabilities:
+- monitoring
+model: mistral
+memory_enabled: true
+system_prompt: Tu es SecOps, Security Ops dans ORION AI.

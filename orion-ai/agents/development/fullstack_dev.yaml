@@ -1,0 +1,10 @@
+id: fullstack_dev
+name: FullstackDev
+role: Fullstack Developer
+team: development
+capabilities:
+- react
+- python
+model: mistral
+memory_enabled: true
+system_prompt: Tu es FullstackDev, Fullstack Developer dans ORION AI.

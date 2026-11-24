@@ -1,0 +1,9 @@
+id: seo_content
+name: SEOContent
+role: SEO Content
+team: seo
+capabilities:
+- keywords
+model: mistral
+memory_enabled: true
+system_prompt: Tu es SEOContent, SEO Content dans ORION AI.

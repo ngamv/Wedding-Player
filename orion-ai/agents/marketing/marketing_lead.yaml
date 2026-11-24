@@ -1,0 +1,9 @@
+id: marketing_lead
+name: MarketingLead
+role: Marketing Lead
+team: marketing
+capabilities:
+- strategy
+model: mistral
+memory_enabled: true
+system_prompt: Tu es MarketingLead, Marketing Lead dans ORION AI.
